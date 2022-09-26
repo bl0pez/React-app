@@ -17,9 +17,18 @@ export interface ProductContextProps {
 
 //Se crea una interfaz para el componente ProductCard
 export interface ProductCardHOCProps {
-//Se definen las propiedades que se van a recibir
-    ({ children, product }: ProductCardProps):JSX.Element,
+    //Se definen las propiedades que se van a recibir
+    ({ children, product }: ProductCardProps): JSX.Element,
     Title: (Props: ProductTitleProps) => JSX.Element,
     Image: (Props: ProductImageProps) => JSX.Element,
     Buttons: (Props: ProductButtonsProps) => JSX.Element,
+}
+
+export interface onChangeArgs {
+    product: Product;
+    count: number;
+}
+
+export interface ProductInCart extends Product {
+    count: number;
 }
